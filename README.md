@@ -18,6 +18,7 @@ The objective is to reduce manual test development by generating Playwright auto
 - TypeScript
 - Jira
 - MCP (Model Context Protocol)
+- TodoMVC
 - Swagger Petstore API
 
 ---
@@ -28,13 +29,83 @@ The objective is to reduce manual test development by generating Playwright auto
 project/
 │
 ├── tests/
-│   ├── QAI-13.spec.ts
-│   ├── QAI-14.spec.ts
-│   ├── QAI-15.spec.ts
-│   └── QAI-16.spec.ts
-│
 ├── results/
-│
+├── utils/
 ├── playwright.config.ts
 ├── package.json
 └── README.md
+```
+
+---
+
+## ✅ Automated Scenarios
+
+### TodoMVC UI Automation
+
+- Add a new task
+- Complete a task
+- Verify DOM class changes
+- Filter tasks (All, Active, Completed)
+- Verify localStorage persistence
+- Verify page reload state persistence
+
+### Swagger Petstore API Automation
+
+- Create Pet (POST /pet)
+- Retrieve Pet (GET /pet/{id})
+- Update Pet Status (PUT /pet)
+- Delete Pet (DELETE /pet/{id})
+
+---
+
+## 🔄 Workflow
+
+### UI Automation Flow
+
+```text
+Jira User Story
+      ↓
+MCP Agent
+      ↓
+Generate Playwright UI Test
+      ↓
+TodoMVC Execution
+      ↓
+Results
+```
+
+### API Automation Flow
+
+```text
+Jira User Story
+      ↓
+MCP Agent
+      ↓
+Generate Playwright API Test
+      ↓
+Petstore Execution
+      ↓
+Results
+```
+
+---
+
+## ▶️ Run Tests
+
+Run all tests:
+
+```bash
+npx playwright test
+```
+
+Run a specific test:
+
+```bash
+npx playwright test tests/QAI-13.spec.ts
+```
+
+---
+
+## 🎯 Goal
+
+Build an AI-assisted QA Automation Framework capable of converting Jira user stories and tasks into executable Playwright tests through MCP-driven workflows.
