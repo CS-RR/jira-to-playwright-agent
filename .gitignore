@@ -1,0 +1,20 @@
+# Playwright
+node_modules/
+.env
+.cache
+.vscode/mcp.json
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+test-results/
+results/*.json
+
+# Local secrets
+.env*
+!.env.example
+
+# Generated results and browser logs
+/results/
+/.playwright-mcp/
